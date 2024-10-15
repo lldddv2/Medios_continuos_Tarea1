@@ -1,0 +1,26 @@
+\subsection{Deducción de la ecuación diferencial.}
+    Cuando el líquido toca un plano infinito, estamos asumiendo que la curvatura del liquido en ese plano es cero. Además, desde esta perspectiva, $\kappa_0 = 0$, de modo que la ecuación que deducimos en clase queda:
+
+    \begin{align*}
+        \kappa_1 + \kappa_2 &= 2\kappa_0 + \frac{z}{R_c^2}\\
+        \kappa_1  &= \frac{z}{R_c^2} \\
+        \kappa_1 &= - \frac{\partial}{\partial z} (1 + z'^2)^{-1/2}
+    \end{align*}
+
+    esta última igualad también deducida en clase. Dado que al igualar, la ecuación diferencial sólo depende de $z$, se convierte en una ecuación diferencial ordinaria.
+
+    \begin{align*}
+        -\frac{d}{dz}(1 + z'^2)^{-1/2} &= \frac{z}{R_c^2} \\
+        d(1 + z'^2)^{-1/2} &= -\frac{z}{R_c^2} dz \\
+        \int_{0}^{(1+z'^2)^{-1/2}} d(1 + z'^2)^{-1/2} &= \int_{0}^{-\frac{z}{R_c^2}} dz 
+    \end{align*}
+    así:
+    \begin{align*}
+        (1 + z'^2)^{-1/2} - 1 &= -\frac{1}{2} \frac{z^2}{R_c^2} \\
+        (1 + z'^2)^{-1/2} &= 1 -\frac{1}{2} \left(\frac{z}{R_c}\right)^2 \\
+        1 + z'^2 &= \left[ 1 -\frac{1}{2} \left(\frac{z}{R_c}\right)^2 \right]^{-2} \\
+    \end{align*}
+
+    \begin{equation}
+        \boxed{z'^2 = \left[ 1 -\frac{1}{2} \left(\frac{z}{R_c}\right)^2 \right]^{-2} - 1 }
+    \end{equation}

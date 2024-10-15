@@ -1,0 +1,106 @@
+\documentclass{article}
+
+\usepackage{amsmath} %para el formato de las fórmulas
+\usepackage{array} % Para tablas avanzadas
+\usepackage{authblk}
+\usepackage[spanish]{babel}
+\usepackage{biblatex}
+\usepackage{booktabs}
+\usepackage{csvsimple}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[total={18cm,24cm},centering]{geometry}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{makecell}
+\usepackage{multicol}
+\usepackage{subcaption}
+\usepackage[dvipsnames]{xcolor} %para subrayar de colores
+\usepackage{xparse}
+
+
+% ##############################
+% ##-> Settings <- #################
+% Figures folder ----------------------------
+\graphicspath{{figures/}}
+% ---------------------------------------------
+
+% link colors ---------------------------------
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,      
+    urlcolor=blue,
+    citecolor=blue
+    }
+% -----------------------------------------------
+
+% Bibliography -------------------------------
+\addbibresource{src/referencias.bib}
+% -----------------------------------------------
+
+% Figures --------------------------------------
+\NewDocumentCommand{\myFigure}
+    {O{} m O{} O{0.5}}{
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=#4\textwidth]{#2}
+            \caption{#3}
+            \label{#1}
+        \end{figure}
+}
+\numberwithin{figure}{section}
+% -----------------------------------------------
+
+% Tables ---------------------------------------
+\makeatletter
+\csvset{
+  autotabularcenter/.style={
+    file=#1,
+    after head=\csv@pretable\begin{tabular}{*{\csv@columncount}{c}}\csv@tablehead,
+    table head=\toprule\csvlinetotablerow\\\midrule,
+    late after line=\\,
+    table foot=\\\bottomrule,
+    late after last line=\csv@tablefoot\end{tabular}\csv@posttable,
+    command=\csvlinetotablerow},
+}
+\makeatother
+\NewDocumentCommand{\myTable}{O{} m O{}}{
+    \begin{table}[H]
+        \centering
+        \csvloop{autotabularcenter={#2}}
+        \caption{#3}
+        \label{#1}
+    \end{table}
+}
+\numberwithin{table}{section}
+% -----------------------------------------------
+
+% Equation -------------------------------------
+\numberwithin{equation}{section}
+% -----------------------------------------------
+
+% ##############################
+% #############################
+
+\title{Title}
+
+\author[1]{Luis Daniel Díaz}
+\affil[1]{
+    Instituto de Física, Facultad de Ciencias Exactas y Naturales, Universidad de Antioquia
+    }
+
+\begin{document}
+
+    \maketitle
+    \begin{multicols}{2}
+        
+        \section{Punto 3.}
+        \input{sections/punto_3.tex}
+
+    \end{multicols}
+
+
+\end{document}
