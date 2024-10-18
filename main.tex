@@ -27,6 +27,12 @@
 \graphicspath{{figures/}}
 % ---------------------------------------------
 
+% subsections -------------------------------
+% Las subsecciones se enumeran con letras
+\renewcommand{\thesubsection}{\alph{subsection})}
+% -----------------------------------------------
+
+
 % link colors ---------------------------------
 \hypersetup{
     colorlinks=true,
@@ -96,6 +102,11 @@
 
     \maketitle
     \begin{multicols}{2}
+        \section{Punto 1.}
+        \input{sections/punto_1.tex}
+        
+        \section{Punto 2.}
+        \input{sections/punto_2.tex}
         
         \section{Punto 3.}
         \input{sections/punto_3.tex}

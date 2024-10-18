@@ -16,5 +16,34 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{lautrup2005physics}{book}{}
+      \name{author}{1}{}{%
+        {{hash=b3c39e642d28bfea3bd33fc31c1ebf18}{%
+           family={Lautrup},
+           familyi={L\bibinitperiod},
+           given={Benny},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IOP publishing}%
+      }
+      \strng{namehash}{b3c39e642d28bfea3bd33fc31c1ebf18}
+      \strng{fullhash}{b3c39e642d28bfea3bd33fc31c1ebf18}
+      \strng{bibnamehash}{b3c39e642d28bfea3bd33fc31c1ebf18}
+      \strng{authorbibnamehash}{b3c39e642d28bfea3bd33fc31c1ebf18}
+      \strng{authornamehash}{b3c39e642d28bfea3bd33fc31c1ebf18}
+      \strng{authorfullhash}{b3c39e642d28bfea3bd33fc31c1ebf18}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Physics of continuous matter: exotic and everyday phenomena in the macroscopic world}
+      \field{year}{2005}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 

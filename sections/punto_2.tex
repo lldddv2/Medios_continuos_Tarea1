@@ -1,0 +1,54 @@
+\myFigure[fig:ilustración]
+    {figures/punto2.jpg}[Ilustración del problema.][.4  ]
+
+La figura \ref{fig:ilustración} muestra un esquema del problema. 
+
+Sea $K$ el número de partículas en el disco superior, hallemos $K$.
+
+Sabemos que el volumen de la semiesfera será, por definición, $V = V_{mol}N = L_{mol}^3 N$, y genéricamente: 
+
+\begin{align*}
+    V &= \frac{1}{2} V_{esf} \\
+    &= \frac{1}{2} \frac{4}{3} \pi r^3\\ 
+    &= \frac{2}{3} \pi r^3 \\
+    &= L_{mol}^3 N 
+\end{align*}
+
+Si despejamos el radio de la esfera, obtenemos:
+
+\begin{equation}
+    r = (3/2\pi)^{1/3} L_{mol} N^{1/3} \label{eq:r_vol}
+\end{equation}
+
+Por otra parte, podemos asumir que $L_{mol}^2 K = A$, donde $A$ es el área del disco superior. Así:
+
+\begin{align*}
+    A &= \pi r^2 \\
+    L_{mol}^2 K &= \pi r^2  
+\end{align*}
+
+y despejando el radio:
+
+\begin{equation}
+    r = \sqrt{\frac{1}{\pi}} L_{mol} \sqrt{K} \label{eq:r_area}
+\end{equation}
+
+Igualando las dos expresiones para $r$, \ref{eq:r_vol} y \ref{eq:r_area}, obtenemos:
+
+\begin{align*}
+    \sqrt{\frac{1}{\pi}} L_{mol} \sqrt{K} &= (3/2\pi)^{1/3} L_{mol} N^{1/3} \\
+\end{align*}
+
+\begin{equation}
+    \sqrt{K} =  (3/2\pi)^{1/3} \sqrt{\pi} N^{1/3} \label{eq:sqrt_K}
+\end{equation}
+
+Ahora, sabemos que $\Delta N = \Delta (pK)$, que por la aproximación de $N$ y $K$ grandes y $p \ll 1$, podemos tratar como una distribución de Poisson. Así:
+
+\begin{align*}
+    \Delta N &= \sqrt{pK} \\
+    &= \sqrt{p} \sqrt{K} \\
+    &= \sqrt{p} (3/2\pi)^{1/3} \sqrt{\pi} N^{1/3} \\
+\end{align*}
+
+Por tanto, podemos ver que $\Delta N = C N^{1/3}$, donde $C = \sqrt{p} (3/2\pi)^{1/3} \sqrt{\pi}$.

@@ -1,0 +1,225 @@
+\subsection{Potencial efectivo H y masa total de la atmósfera.}
+
+Según la ecuación 4.41 del  libro guía \cite{lautrup2005physics}:
+
+\begin{equation}
+    H = g_0 z + c_p T \label{eq:H}
+\end{equation}
+
+En este tipo de atmósfera, $H$ no depende de la altura, dado que $T =  T_0 - g_0 \frac{z}{c_p}$, por lo que la ecuación \ref{eq:H} se convierte en:
+
+\begin{align*}
+    H &= g_0 z + c_p (T_0 - g_0 \frac{z}{c_p}) \\
+    &= g_0 z + c_p T_0 - g_0 z \\
+    &= c_p T_0  \label{eq:H2}
+\end{align*}
+
+Ahora, en clase se dedujo que:
+
+\begin{align*}
+    p = c_p \frac{\gamma - 1}{\gamma} \rho T
+\end{align*}
+
+Despejando:
+
+\begin{equation}
+    c_p = \frac{p}{\rho T} \frac{\gamma}{\gamma - 1} \label{eq:cp}
+\end{equation}
+
+En particular $c_p = \frac{p_0}{\rho_0 T_0} \frac{\gamma}{\gamma - 1}$, que son valores que nos dan, así, $c_p = 1004.685 \frac{J}{kg K}$.
+
+Sustituyendo en la ecuación \ref{eq:H2}:
+
+\begin{align*}
+    H &= c_p T_0 \\
+    &= 1004.685 \frac{J}{kg K} \cdot 288.15 K \\
+    &= 2.895 \times 10^5 \frac{J}{kg}
+\end{align*}
+
+\begin{equation}
+    \boxed{H = 2.895 \times 10^5 \frac{J}{kg} }\label{eq:H3}
+\end{equation}
+
+Por otro lado, para el cálculo de la masa total de la atmósfera, podemos partir de la propia definición de densidad:
+
+\begin{align*}
+    \frac{dm}{dV} &= \rho \\
+    dm &= \rho dV \\
+    \int_{0}^{M(z)} dm&= \int_{0}^{V(z)} \rho dV\\
+    M(z) &= \int_{0}^{V(z)} \rho dV
+\end{align*}
+
+En esta atmósfera:
+
+\begin{equation}
+    \rho = \rho_0 \left( 1- \frac{z}{h_2} \right)^{1/(\gamma - 1)}
+    \label{eq:rho}
+\end{equation}
+
+Para hallar el diferencial de volumen $dV$, asumamos que el planeta es esférico conn radio $R_E$ hasta la superficie:
+
+\begin{align*}
+    V(z) &= \frac{4}{3} \pi (R_E + z)^3 -\frac{4}{3} \pi R_E^3 \\
+    dV &= 4 \pi (R_E + z)^2 dz
+\end{align*}
+
+Ahora, en general, esta integral puede complicarse, aunque es fácil de resolver con integración por partes, la forma de esta función es un poco difícil de manjar. Para solucionar este problema, vallamos a la escalas que trabajamos.
+
+\begin{align*}
+    h_2 = h_0 \frac{\gamma}{\gamma - 1} = \frac{p_0}{\rho_0 g_0} \frac{\gamma}{\gamma - 1} \approx 29.5 km
+\end{align*}
+
+Si tomamos el radio de la tierra como $R_E = 6371 km$, que es el valor que considera el libro guía, observamos que $z$, que puede estar entre $(0, h_2) = (0, 29.5 km)$, es mucho menor que $R_E$, por lo que podemos hacer la aproximación $dV = 4 \pi (R_E + z)^2 dz \approx 4 \pi R_E^2 dz$.
+
+de modo que la integral queda:
+
+\begin{align*}
+    M(z) &= \int_{0}^{V(z)} \rho dV \\
+    &= \int_{0}^{V(z)} \rho_0 \left( 1- \frac{z'}{h_2} \right)^{1/(\gamma - 1)} dV \\
+    &= \int_{0}^{z} \rho_0 \left( 1- \frac{z'}{h_2} \right)^{1/(\gamma - 1)}  4 \pi (R_E + z')^2 dz'  \\
+    &\approx \int_{0}^{z} \rho_0 \left( 1- \frac{z'}{h_2} \right)^{1/(\gamma - 1)}  4 \pi R_E^2 dz'  \\
+\end{align*}
+
+\begin{equation}
+    M(z) \approx 4 \pi R_E^2 \rho_0 \int_{0}^{z} \left( 1- \frac{z'}{h_2} \right)^{1/(\gamma - 1)} dz'  \label{eq:Masa_approx}
+\end{equation}
+
+y resolver esta integral es trivial:
+
+\begin{align*}
+    I(z) &= \int_{0}^{z} \left( 1- \frac{z'}{h_2} \right)^{1/(\gamma - 1)} dz' \\
+    &= \int_{1}^{1-z/h_2} (1-\frac{z'}{h_2})^{1/(\gamma - 1)} d\left(1-\frac{z'}{ \textcolor{blue}{ h_2 }}\right) \textcolor{blue}{(-h_2)} \\
+    &= h_2 \left( \frac{\gamma - 1}{\gamma} \right) \left[ 1 -  (1-\frac{z}{h_2})^{\gamma/(\gamma - 1)} \right]
+\end{align*}
+
+de modo que:
+
+\begin{equation}
+    \boxed{M(z) \approx 4 \pi \rho_0 R_E^2  h_2 \left( \frac{\gamma - 1}{\gamma} \right) \left[ 1 -  (1-\frac{z}{h_2})^{\gamma/(\gamma - 1)} \right]} \label{eq:Masa_approx_expresion}
+\end{equation}
+
+En nuestro caso, nos interesa integrar sobre todo, esto es, $z = h_2$, de modo que:
+
+\begin{align*}
+    M(h_2) &\approx 4 \pi \rho_0 R_E^2  h_2 \left( \frac{\gamma - 1}{\gamma} \right) \left[ 1 -  (1-\frac{h_2}{h_2})^{\gamma/(\gamma - 1)} \right] \\
+     &\approx 4 \pi \rho_0 R_E^2  h_2 \left( \frac{\gamma - 1}{\gamma} \right)
+\end{align*}
+
+Evaluando: 
+
+\begin{equation}
+    \boxed{M_{atm} = M(h_2) \approx 5.274 \times 10^{18} kg} \label{eq:Masa_atm}
+\end{equation}
+
+Para verificar que esta aproximación es válida, podemos hacer uso de \texttt{sympy}, que resuelve de manera analítica la integral, y evaluamos directamente los valores. Haciedo esto, obtenemos una masa de $5.285 \times 10^{18} kg$, lo que nos dice que esta aproximación es bastante buena.
+
+\subsection{Relación masa atmósfera y masa de la tierra.}
+
+En la sección 3.1 de libro guía, llamada \textit{Mass density}, en el apartado de \textit{spherical systems}, encontramos que en el modelo bicapa:
+
+\begin{align*}
+    \rho_1 &= 10.9 \ \text{ g cm}^{-3} \\
+    \rho_2 &= 4.4 \ \text{ g cm}^{-3}
+\end{align*}
+
+y en la figura 3.1 (del libro), se indica que $R_E = 6371 km$, $r_1 = 3485 km$. Aquí, los valores con subíndice 1 representan el núcleo, y los valores con subíndice 2 representan el manto.
+
+Estos valores que se reportan representan el valor promedio de la densidad, puesto, que la densidad en realidad es una función continua del radio. Sin embargo, estos valores no son suficientes para hallar la masa de la tierra:
+
+\begin{align*}
+    V_E = \frac{4}{3} \pi R_E^3 \\
+    V_1 = \frac{4}{3} \pi r_1^3 \\  
+    V_2 = V_E - V_1
+\end{align*}
+
+Y la masa de cada uno no es más que multiplicar por la densidad. Así, la masa total de la tierra sería:
+
+\begin{equation}
+    M_E = \rho_1 V_1 + \rho_2 V_2  \textcolor{blue}{ + M_{atm}}
+\end{equation}
+
+En azul colocamos la masa atmosférica, que como veremos, es de ordenes mucho menores, entonces, puede despreciarse. Reemplazando los valores dados:
+
+\begin{equation}
+    M_E = 5.919 \times 10^{24} kg
+\end{equation}
+
+Ahora, el porcentaje que representa la atmósfera es:
+
+\begin{equation}
+    \boxed{
+        f_{atm} = \frac{M_{atm}}{M_E} = 8.9 \times  10^-7
+    }
+\end{equation}
+
+Esto es, la atmósfera no afecta de forma significativa la masa total de la tierra en este modelo bicapa.
+
+\subsection{Temperatura a mitad de la masa atmosférica.}
+
+Por lo visto en la subsección a, la constante que acompaña el corchete en la ecuación \ref{eq:Masa_approx_expresion} corresponde a la masa total, así que podemos reescribir la ecuación:
+
+\begin{align*}
+    M(z) &= M_{atm} \left[ 1 -  (1-\frac{z}{h_2})^{\gamma/(\gamma - 1)} \right]
+\end{align*}
+
+Más aún, en este tipo de atmosferas $ T/T_0 = 1 - z/h_2$, de modo que:
+
+\begin{align*}
+    M(z) &= M_{atm} \left[ 1 -  (1-T/T_0)^{\gamma/(\gamma - 1)} \right]
+\end{align*}
+
+Así, para una masa igual a la mitad de la masa total de la atmósfera:
+
+\begin{align*}
+    M_{atm} \left[ 1 -  \left(\frac{T_{1/2}}{T_0}\right)^{\gamma/(\gamma - 1)} \right] &= \frac{M_{atm}}{2} \\
+    1 -  \left(\frac{T_{1/2}}{T_0}\right)^{\gamma/(\gamma - 1)} &= \frac{1}{2} \\
+    \left(\frac{T_{1/2}}{T_0}\right)^{\gamma/(\gamma - 1)} &= \frac{1}{2} \\
+    \frac{T_{1/2}}{T_0} &= \left( \frac{1}{2} \right)^{(\gamma - 1)/\gamma} \\
+\end{align*}
+
+\begin{equation}
+    \boxed{T_{1/2} = T_0 \left( \frac{1}{2} \right)^{(\gamma - 1)/\gamma} }
+\end{equation}
+
+Evaluando tenemos:
+
+\begin{equation}
+    \boxed{T_{1/2} = 236.38 K}
+\end{equation}
+
+
+\subsection{Incremento del volumen de un globo.}
+
+Supongamos que dentro del globo hay un gas ideal, siendo $p_{int} - p= \eta p$, así, $p_{int}= p(\eta - 1)$ la presión interna. De modo que según la ley de los gases ideales:
+
+\begin{align*}
+    p_{int} V &= n R T_{int} \\
+    p(\eta-1) V &= n R T_{int} \\
+    V &= \frac{nR}{(\eta-1)} \frac{T_{int}}{p}
+\end{align*}
+
+Asumamos que la Temperatura en es la misma en la atmósfera y en el interior del globo en todo momento. Reemplazando en la ecuación la Temperatura y la presión con respecto a la altura:
+
+\begin{align*}
+    V &= \frac{n R}{(\eta-1)} \frac{T_0 ( 1 - z/h^2)}{P_0 (1 - z/h^2)^{\gamma / (\gamma - 1)}} \\
+    &= \frac{n R}{(\eta-1)} \frac{T_0}{P_0} (1 - \frac{z}{h^2})^{1/(\gamma - 1)} \\
+    &= K (1 - \frac{z}{h^2})^{-1/(\gamma - 1)}
+\end{align*}
+
+siendo $K = \frac{n R}{(\eta-1)} \frac{T_0}{P_0}$. Si $z=0$, se demuestra que $ V_0 = K$, siendo $V_0$ el volumen del globo en la superficie. Así, para un $z=z_f$ tal que el volumen del globo sea el doble del volumen en la superficie:
+
+\begin{align*}
+    V_0 (1 - \frac{z_f}{h^2})^{-1/(\gamma - 1)} &=2 V_0\\
+    (1 - \frac{z_f}{h^2})^{-1/(\gamma - 1)} &=2\\
+    1 - \frac{z_f}{h^2} &= 2^{-(\gamma - 1)}\\
+    \frac{z_f}{h_2} &= 1 - 2^{-(\gamma - 1)}\\
+\end{align*}
+
+
+Reemplazando tenemos que:
+
+\begin{equation}
+    \boxed{\frac{z_f}{h_2} = 0.2422}
+\end{equation}
+
+Lo cual significa que el globo duplica su tamaño cerca de un 25\% de la altura de la atmósfera.
