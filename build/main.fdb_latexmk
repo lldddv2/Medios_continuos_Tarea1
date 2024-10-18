@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber build/main"] 0 "build/main.bcf" "build/main.bbl" "build/main" 1729221134 -1
+["biber build/main"] 0 "build/main.bcf" "build/main.bbl" "build/main" 1729222387 -1
   "./src/referencias.bib" 1729109998 194 b037ce7a0c3bb2440d5f666fc432b6f9 ""
-  "build/main.bcf" 1729221133 106917 80bdc2ebb2d9896802fc5d8e1ddcc617 "pdflatex"
+  "build/main.bcf" 1729222387 106917 80bdc2ebb2d9896802fc5d8e1ddcc617 "pdflatex"
   (generated)
   "build/main.bbl"
   "build/main.blg"
   (rewritten before read)
-["pdflatex"] 1729221129 "/home/lldddv/Documentos/Materias/Semetre 6/Medios_continuos/main.tex" "build/main.pdf" "main" 1729221134 0
+["pdflatex"] 1729222384 "/home/lldddv/Documentos/Materias/Semetre 6/Medios_continuos/main.tex" "build/main.pdf" "main" 1729222387 0
   "/etc/texmf/web2c/texmf.cnf" 1711657437 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/lldddv/Documentos/Materias/Semetre 6/Medios_continuos/main.tex" 1729221003 3033 238012987c0b0301a911a67e8183184a ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -147,15 +147,15 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1681034085 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1711658260 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1711658341 7880593 5cc8b392c26987fc81411bf35d76860c ""
-  "build/main.aux" 1729221133 3271 d1daedf0a90f8dca846964854b1e6ff5 "pdflatex"
+  "build/main.aux" 1729222387 3271 d1daedf0a90f8dca846964854b1e6ff5 "pdflatex"
   "build/main.bbl" 1729111457 1551 2be938601f8e983411ab813f8e42d2ce "biber build/main"
-  "build/main.out" 1729221133 1887 505e8af6982f110586e4bf2963e353d3 "pdflatex"
-  "build/main.run.xml" 1729221133 2310 0bb617a25ce96469bc9cb31022b170b2 "pdflatex"
+  "build/main.out" 1729222387 1887 505e8af6982f110586e4bf2963e353d3 "pdflatex"
+  "build/main.run.xml" 1729222387 2310 0bb617a25ce96469bc9cb31022b170b2 "pdflatex"
   "figures/punto2.jpg" 1729216370 9276 05f1f5cd07f378ca5b017dd1f8f1b825 ""
   "main.tex" 1729221003 3033 238012987c0b0301a911a67e8183184a ""
   "sections/punto_1.tex" 1729215923 8638 4d20d78c80b36eb3edf66605e82c456d ""
   "sections/punto_2.tex" 1729217864 1628 23734c6b77f6b2afb1841e57cb8c114b ""
-  "sections/punto_3.tex" 1729221107 1440 4677fe4f2fbfb5f9d621a8ed941546f0 ""
+  "sections/punto_3.tex" 1729222383 2026 fae16cc0eab7238028f0bb962aff6cce ""
   (generated)
   "build/main.aux"
   "build/main.bcf"
